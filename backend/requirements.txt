@@ -7,5 +7,7 @@ vit-keras==0.1.2
 tensorflow==2.11.0
 python-multipart==0.0.9
 typing-extensions==4.5.0
+tensorflow-addons==0.21.0
+
 
 
