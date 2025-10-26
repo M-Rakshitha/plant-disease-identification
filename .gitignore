@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# Python / Environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+.envrc
+
+# Node / Frontend
+node_modules/
+dist/
+.out/
+.build/
+
+# Logs
+*.log
+
+# Datasets and large files
+PlantVillage/
+*.zip
+
+# Model files (too large for Git)
+model/*.h5
+model/*.onnx
+model/*.tflite
+model/checkpoints/
+backend/model/*.h5
+backend/model/*.onnx
+backend/model/*.tflite
+backend/model/checkpoints/
+
+# Editor
+.vscode/

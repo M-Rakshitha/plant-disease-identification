@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plant Disease Prediction Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <section id="result-card" class="card"></section>
+  </div>
+
+  <script>
+    // Read prediction data from sessionStorage
+    const data = JSON.parse(sessionStorage.getItem("plantResult"));
+    const resultCard = document.getElementById("result-card");
+
+    if (!data) {
+      resultCard.innerHTML = "<p>No data found. Please go back and upload an image.</p>";
+    } else {
+      const { plant_class, disease_name, confidence, disease_info, supplements } = data;
+      const pct = (confidence * 100).toFixed(1);
+      const imgTag = disease_info.image_url
+      ? `<img src="${disease_info.image_url}" style="width:300px;border-radius:8px;margin:10px 0;">`
+      : "";
+      resultCard.innerHTML = `
+        <h2>Plant Disease Prediction</h2>
+        <p><strong>Predicted Plant Class:</strong> ${plant_class}</p>
+        <p><strong>Predicted Disease:</strong> ${disease_name}</p>
+        <p><strong>Confidence:</strong> ${pct}%</p>
+        <img src="${disease_info?.image_url || ''}" style="width:300px;border-radius:8px;margin:10px 0;">
+        <p><strong>Details:</strong> ${disease_info?.description || 'N/A'}</p>
+        <p><strong>Possible Steps:</strong> ${disease_info?.possible_steps || 'N/A'}</p>
+        <h3>Recommended Supplements</h3>
+        ${
+          supplements?.length
+            ? supplements.map(s => `
+              <div>
+                ${s.supplement_image ? `<img src="${s.supplement_image}" style="width:100px;border-radius:6px;">` : ""}
+                <a href="${s.buy_link}" target="_blank" rel="noopener">${s.supplement_name}</a>
+              </div>`).join("")
+          : "<p>No supplement info available.</p>"
+        }
+            <p><a href="./index.html">← Back</a></p>
+      `;
+    }
+  </script>
+</body>
+</html>

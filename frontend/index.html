@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plant Disease Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>Plant Disease Identification</h1>
+      <p>Upload a leaf image to check if it’s healthy and get quick guidance.</p>
+    </div>
+
+    <main class="cards">
+      <section class="card">
+        <h3>Why is it necessary to detect disease in plant?</h3>
+        <p class="muted">
+          Plant diseases affect the growth of their respective species. Early diagnosis improves transparency in
+          detection, even before symptoms are obvious. Without proper identification of the disease and causal agent,
+          control measures waste time and money and can lead to further losses. Proper disease diagnosis is necessary.
+        </p>
+      </section>
+
+      <section class="card center">
+        <img class="plant" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=800&auto=format&fit=crop" alt="Potted plant" />
+
+        <label class="file">
+          <span>Choose File</span>
+          <input id="file" type="file" accept="image/*" />
+        </label>
+        <span id="filename" class="filename">No file chosen</span>
+
+        <p class="hint">Simply upload your plant’s leaf image and then see the magic of AI.</p>
+
+        <button class="btn" id="submitBtn" type="button">Submit</button>
+      </section>
+
+      <section class="card">
+        <h3>Prevent Plant Disease follow below steps:</h3>
+        <ol>
+          <li>Follow good sanitation practices.</li>
+          <li>Fertilize to keep plants healthy.</li>
+          <li>Inspect plants before bringing them home.</li>
+          <li>Allow soil to warm before planting.</li>
+          <li>Rotate crops for healthy gardens.</li>
+          <li>Provide good air circulation.</li>
+          <li>Remove diseased stems and foliage.</li>
+        </ol>
+        <button class="btn outline" type="button">More info</button>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Plant Disease Project • Front-end Prototype
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
